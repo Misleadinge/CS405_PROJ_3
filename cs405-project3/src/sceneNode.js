@@ -45,7 +45,7 @@ class SceneNode {
         //do calculkations
         var transformedMvp = MatrixMult(mvp, this.trs.getTransformationMatrix());
         var transformedModelView = MatrixMult(modelView, this.trs.getTransformationMatrix());
-        var transformedNormals = getNormalMatrix(transformedModelView);
+        var transformedNormals = MatrixMult(normalMatrix, this.trs.getTransformationMatrix());
         var transformedModel = MatrixMult(modelMatrix, this.trs.getTransformationMatrix());
 
         //draw the MeshDrawer
